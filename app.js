@@ -75,6 +75,9 @@ app.post('/listaa',(req,res) =>{
     })
 })
 
+
+
+
 app.post('/eliminar', (req,res) =>{
     res.render('eliminado',{
         estudiantes: funciones.eliminar(req.body.id)
