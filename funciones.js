@@ -36,6 +36,13 @@ const listar= () => {
     
 }
 
+const listarInscritos = () =>{
+    try {
+        listaInscriptos = require('./listadoInscriptos.json')
+    } catch (error) {
+        listaInscriptos = []
+    }
+}
 
 const guardar = () => {
     let datos = JSON.stringify(listaEstudiantes)
@@ -98,11 +105,38 @@ const inscripcion=(estudiante)=>
     return true
 }
 
+const listaInscripto= (nombre)=>{
+    listarInscritos()
+    listaa = []
+    listaInscriptos.forEach(estudiante =>{
+        if(estudiante.curso == nombre)
+        {
+            listaa.push(estudiante)
+        }
+    })
+
+    return listaa
+}
+
+
+const eliminar = id =>{
+    listarInscritos()
+   
+    let guardar = listaInscriptos.filter(curso=> curso.id!=id)
+    if(guardar.length != listaInscriptos.length)
+    {
+        console.log('Entro')
+        listaInscriptos = guardar
+        inscribirEst()
+    }
+}
 
 module.exports = {
     crear,
     inscripcion,
     mostrar,
     buscar,
-    mostrarEst
+    mostrarEst,
+    listaInscripto,
+    eliminar
 }

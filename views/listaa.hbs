@@ -1,0 +1,34 @@
+{{>header}}
+  
+  {{#if estudiantes}}
+     <table class="table">
+     <thead class="thead-dark">
+          <tr>
+          <th scope="col">Cedula</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Correo electronico</th>
+          <th scope="col">Opción</th>
+          </tr>
+     </thead>
+     <tbody>
+          {{#each estudiantes}}
+               <tr>
+                    <td>{{id}}</td>
+                    <td> {{nombre}} </td>
+                    <td>{{correo}}</td>
+                    <td>
+                    <form action="/eliminar" method="post">
+                         <input type="hidden" name='id' value="{{id}}">
+                         <button class="btn btn-danger" >Eliminar</button>
+                    </form>
+                    
+                    </td>
+               </tr>
+            {{/each}}
+     </tbody>
+     </table>
+{{else}}
+     <h2>No hay estudiantes registrados a este curso</h2>
+     <a class="btn btn-primary" href="/administrar">Volver</a>
+{{/if}} 
+{{>footer}}

@@ -69,6 +69,18 @@ app.get('/administrar',(req,res) =>{
     )
 })
 
+app.post('/listaa',(req,res) =>{
+    res.render('listaa', {
+        estudiantes: funciones.listaInscripto(req.body.nombre)
+    })
+})
+
+app.post('/eliminar', (req,res) =>{
+    res.render('eliminado',{
+        estudiantes: funciones.eliminar(req.body.id)
+    })
+})
+
 app.listen(3000,() =>{
     console.log('Escuchando en el puerto 3000')
 })

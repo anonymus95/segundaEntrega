@@ -20,10 +20,17 @@
                     <td>{{valor}}</td>
                     <td>{{estado}}</td>
                     <td>
-                    <button type="button" class="btn btn-danger" >Eliminar</button>
+                    <form action="/listaa" method="POST">
+                         <input type="hidden" name='nombre' value="{{nombre}}">
+                         <button class="btn btn-primary" >Ver inscriptos</button>
+                    </form>
+                    
                     </td>
                </tr>
             {{/each}}
      </tbody>
-     </table> 
+     </table>
+{{else}}
+     <h2>No hay cursos registrados</h2>
+{{/if}} 
 {{>footer}}
