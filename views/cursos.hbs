@@ -1,0 +1,147 @@
+{{>header}}
+
+<br>
+{{#if estudiante }}
+  <div class="alert alert-danger" id="alert" role="alert">
+      Ya existe un curso con ese id
+  </div>
+  <a class="btn btn-danger" href="/">Volver</a>
+{{else}}
+
+
+     {{#if estudiantes}}
+     <table class="table">
+     <thead class="thead-dark">
+          <tr>
+          <th scope="col">Nombre</th>
+          <th scope="col">Descripción</th>
+          <th scope="col">Valor</th>
+          <th scope="col">Opción</th>
+          </tr>
+     </thead>
+     <tbody>
+          {{#each estudiantes}}
+               <tr>
+                    <td>{{nombre}}</td>
+                    <td> {{descripcion}} </td>
+                    <td>{{valor}}</td>
+                    <td>
+                    <button type="button" class="btn btn-primary" onclick="abrirModal({{id}},'{{nombre}}','{{descripcion}}',{{valor}},'{{modalidad}}',{{intensidadHoraria}})">Ver</button>
+                    </td>
+               </tr>
+     
+     
+     <!-- Modal -->
+     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+     <div class="modal-dialog" role="document">
+     <div class="modal-content">
+          <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Información del curso</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+               <span aria-hidden="true">&times;</span>
+          </button>
+          </div>
+          <div class="modal-body" id="modal-body">
+          <div class="form-row">
+               <div class="form-group col-md-6">
+                    <p> <strong id="codigo"> Código:</strong></p>
+               </div>
+               
+               <div class="form-group col-md-6">
+                    <p id="codigoC"> </p>
+               </div>
+          </div>
+
+          <div class="form-row">
+               <div class="form-group col-md-6">
+                    <p> <strong id="nombre"> Nombre:</strong></p>
+               </div>
+               
+               <div class="form-group col-md-6">
+                    <p id="nombreC"> </p>
+               </div>
+          </div>
+          
+          <div class="form-row">
+               <div class="form-group col-md-6">
+                    <p> <strong id="descripcion"> Descripción:</strong></p>
+               </div>
+               
+               <div class="form-group col-md-6">
+                    <p id="descripcionC"></p>
+               </div>
+          </div>
+          
+          <div class="form-row">
+               <div class="form-group col-md-6">
+                    <p> <strong id="valor"> Valor:</strong></p>
+               </div>
+               
+               <div class="form-group col-md-6">
+                    <p id="valorC"></p>
+               </div>
+          </div>
+
+          <div class="form-row">
+               <div class="form-group col-md-6">
+                    <p> <strong id="modalidad"> Modalidad:</strong></p>
+               </div>
+               
+               <div class="form-group col-md-6">
+                    <p id="modalidadC"> </p>
+               </div>
+          </div>
+
+          <div class="form-row">
+               <div class="form-group col-md-6">
+                    <p> <strong id="intensidadHoraria"> Intensidad horaria:</strong></p>
+               </div>
+               
+               <div class="form-group col-md-6">
+                    <p id="intensidadHorariaC">  </p>
+               </div>
+          </div>
+          
+          
+          </div>
+          <div class="modal-footer">
+          <button type="button" class="btn btn-success" data-dismiss="modal">Cerrar</button>
+          </div>
+     </div>
+     </div>
+     </div>
+          {{/each}}
+     </tbody>
+     </table> 
+     {{else}}
+          <p>No hay cursos creados</p>
+     {{/if}}
+
+{{/if}}
+
+<script>    
+      function abrirModal(codigo,nombre,descripcion,valor,modalidad,intensidadHoraria){
+       	$('#exampleModalLabel');
+        $('#codigo');
+		$('#codigoC').html(codigo);
+
+        $('#nombre');
+		$('#nombreC').html(nombre);
+
+        $('#descripcion');
+		$('#descripcionC').html(descripcion);
+
+        $('#valor');
+		$('#valorC').html(valor);
+
+        $('#modalidad');
+		$('#modalidadC').html(modalidad);
+
+        $('#intensidadHoraria');
+		$('#intensidadHorariaC').html(intensidadHoraria);
+        
+		$('#exampleModal').modal('show');
+      }
+</script>
+
+{{>footer}}

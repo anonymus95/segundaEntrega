@@ -1,0 +1,53 @@
+{{>header}}
+
+
+<div class="jumbotron">
+   <h2 class="text-center">Inscripción</h2>
+   <form action="/inscripcion" method="post">
+
+       
+      <div class="form-row">
+         <div class="form-group col-md-6">
+            <label for="cedula">Cedula</label>
+            <input type="number" class="form-control" name="cedula" placeholder="cedula" required>
+         </div>
+         
+         <div class="form-group col-md-6">
+            <label for="nombre">Nombre</label>
+            <input type="text" class="form-control" name="nombre" placeholder="nombre" required>
+         </div>
+      </div>
+         
+      <div class="form-row">
+         <div class="form-group col-md-6">
+            <label for="correo">Correo electronico</label>   
+            <input type="email" class="form-control" name="correo" placeholder="correo" required>
+         </div>
+         
+         <div class="form-group col-md-6">
+            <label for="telefono">Telefono</label>
+            <input type="number" class="form-control" name="telefono" placeholder="telefono" required>
+         </div>
+      </div>
+
+      <div class="form-group">
+         <label for="curso">Cursos</label>
+         <select name="curso" class="form-control" required>
+            <option value="">Seleccione un curso</option>
+            {{#each cursos}}
+               <option value={{nombre}}>{{nombre}}</option>   
+            {{/each}}
+         </select>
+
+      </div>
+      
+      <br>
+      <div class="text-center">
+         <button class="btn btn-primary">Inscribirme al curso</button>
+      </div>
+        
+   </form>
+</div>
+
+   
+{{>footer}}

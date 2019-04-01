@@ -1,0 +1,29 @@
+{{>header}} 
+ 
+ 
+ {{#if estudiantes}}
+     <table class="table">
+     <thead class="thead-dark">
+          <tr>
+          <th scope="col">Nombre</th>
+          <th scope="col">Descripción</th>
+          <th scope="col">Valor</th>
+          <th scope="col">Estado</th>
+          <th scope="col">Opción</th>
+          </tr>
+     </thead>
+     <tbody>
+          {{#each estudiantes}}
+               <tr>
+                    <td>{{nombre}}</td>
+                    <td> {{descripcion}} </td>
+                    <td>{{valor}}</td>
+                    <td>{{estado}}</td>
+                    <td>
+                    <button type="button" class="btn btn-danger" >Eliminar</button>
+                    </td>
+               </tr>
+            {{/each}}
+     </tbody>
+     </table> 
+{{>footer}}

@@ -1,0 +1,14 @@
+{{>header}}
+{{#if estudiante }}
+  <div class="alert alert-danger" id="alert" role="alert">
+      Ya estas registrado en este curso
+  </div>
+{{else}}
+   <div class="alert alert-success" id="alert" role="alert">
+      Inscripción exitosa
+  </div>
+  
+{{/if}}
+<a class="btn btn-primary" href="/inscripcion">Volver</a>
+
+{{>footer}}

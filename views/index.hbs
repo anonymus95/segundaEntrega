@@ -1,0 +1,53 @@
+{{>header}}
+
+  <div class="jumbotron">
+    <h2 class="text-center">Crear un curso</h2>
+    <form action="/cursos" method="POST">
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputEmail4">Nombre</label>
+          <input type="text" class="form-control" name="nombre" placeholder="Ingrese el nombre del curso" required>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputPassword4">Codigo</label>
+          <input type="number" class="form-control" name="id" placeholder="Ingrese el codigo del curso" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputAddress">Descripcion</label>
+        <textarea class="form-control" name="descripcion" placeholder="Ingrese una breve descripción del curso..." required></textarea>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputAddress2">Valor</label>
+          <input type="number" class="form-control" name="valor" placeholder="Valor del curso" required>
+        </div>
+
+          <div class="form-group col-md-6">
+          <label for="modalidad">Modalidad</label>
+          <select name="modalidad" class="form-control">
+            <option selected>-</option>
+            <option>Presencial</option>
+            <option>Virtual</option>
+          </select>
+        </div>
+      </div>
+    
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="intensidadHoraria">Intensidad horaria</label>
+          <input type="number" class="form-control" name="intensidadHoraria">
+        </div>
+        <div class="form-group col-md-2">
+          <input type="hidden" name="estado" value="Disponible">
+        </div>
+      </div>
+    
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary">Crear curso</button>
+      </div>
+    
+    </form>
+  </div>
+
+{{>footer}}
