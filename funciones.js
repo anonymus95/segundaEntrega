@@ -131,6 +131,28 @@ const eliminar = id =>{
     }
 }
 
+const actualizarCurso = (nombre_curso) =>{
+    listar()
+
+    let buscar = listaEstudiantes.find((buscar) => buscar.nombre == nombre_curso)
+    if(!buscar)
+    {
+        console.log(`Curso ${nombre_curso} no fue encontradoo`)
+    }
+    else
+    {
+        if(buscar.estado == "Disponible")
+        {
+            buscar['estado'] ="Cerrado"
+        }
+        else
+        {
+            buscar['estado'] = "Disponible"
+        }
+        guardar()
+    }
+    return listaEstudiantes
+}
 module.exports = {
     crear,
     inscripcion,
@@ -138,5 +160,6 @@ module.exports = {
     buscar,
     mostrarEst,
     listaInscripto,
-    eliminar
+    eliminar,
+    actualizarCurso
 }

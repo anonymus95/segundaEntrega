@@ -30,6 +30,16 @@
             {{/each}}
      </tbody>
      </table>
+
+     <form action="/administrar" method="POST">
+          <select name="curso">
+               {{#each estudiantes}}
+               <option> {{nombre}} </option>  
+               {{/each}}
+          </select>
+          <button type="submit" class="btn btn-warning">Actualizar</button>
+     </form>
+     
 {{else}}
      <h2>No hay cursos registrados</h2>
 {{/if}} 

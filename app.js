@@ -75,7 +75,11 @@ app.post('/listaa',(req,res) =>{
     })
 })
 
-
+app.post('/administrar', (req,res) => {
+    res.render('inscritos', {
+        estudiantes: funciones.actualizarCurso(req.body.curso)
+    } )
+})
 
 
 app.post('/eliminar', (req,res) =>{
