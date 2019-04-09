@@ -6,6 +6,8 @@ const hbs = require('hbs')
 
 const bodyParser = require('body-parser')
 
+const port = process.env.PORT || 3000;
+
 //partials
 
 
@@ -89,5 +91,5 @@ app.post('/eliminar', (req,res) =>{
 })
 
 app.listen(3000,() =>{
-    console.log('Escuchando en el puerto 3000')
+    console.log('Escuchando en el puerto '+ port)
 })
