@@ -32,6 +32,7 @@
      </table>
 
      <form action="/administrar" method="POST">
+          <input type="hidden" name="estado" value={{estado}}>
           <select name="curso">
                {{#each estudiantes}}
                <option> {{nombre}} </option>  

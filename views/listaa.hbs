@@ -13,12 +13,12 @@
      <tbody>
           {{#each estudiantes}}
                <tr>
-                    <td>{{id}}</td>
+                    <td>{{cedula}}</td>
                     <td> {{nombre}} </td>
                     <td>{{correo}}</td>
                     <td>
                     <form action="/eliminar" method="post">
-                         <input type="hidden" name='id' value="{{id}}">
+                         <input type="hidden" name='id' value="{{cedula}}">
                          <button class="btn btn-danger" >Eliminar</button>
                     </form>
                     
