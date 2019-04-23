@@ -1,6 +1,6 @@
 {{>header}}
 
-
+{{#if cursos}}
 <div class="jumbotron">
    <h2 class="text-center">Inscripción</h2>
    <form action="/inscripcion" method="post">
@@ -48,6 +48,8 @@
         
    </form>
 </div>
-
+{{else}}
+<h1>No hay cursos registrados</h1>
+{{/if}}
    
 {{>footer}}
